@@ -23,8 +23,9 @@ volatile uint32_t CAN_recv_tmr = 0;
 uint32_t diag_send_tmr, rail_send_tmr = 0;
 uint32_t temp_samp_tmr, rail_samp_tmr = 0;
 
-// SPI Connections
+// Connections
 SPIConn* spi_nvm = NULL;
+UARTConn* uart_usb = NULL;
 
 /**
  * Main function
@@ -39,13 +40,10 @@ void main(void) {
   init_adc(init_adc_logger); // Initialize ADC module
   init_termination(TERMINATING); // Initialize programmable CAN termination
   init_can(); // Initialize CAN
-
   spi_nvm = init_nvm_std(); // Initialize NVM module
-  //TODO: USB
+  uart_usb = init_usb_std(); // Initialize USB module
 
   //init_ltc3350(); // Initialize supercapacitor charger IC
-
-
   //TODO: RTC
   //TODO: SD
   //TODO: RF

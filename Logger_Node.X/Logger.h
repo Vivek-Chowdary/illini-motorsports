@@ -18,6 +18,7 @@
 #include "../FSAE.X/FSAE_ltc3350.h"
 #include "../FSAE.X/FSAE_nvm.h"
 #include "../FSAE.X/FSAE_spi.h"
+#include "../FSAE.X/FSAE_usb.h"
 
 // Thresholds
 #define RPM_ON_THRESHOLD 200.0 // rpm
